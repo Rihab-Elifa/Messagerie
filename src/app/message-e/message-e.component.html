@@ -1,0 +1,75 @@
+<mat-toolbar class="example-icon">
+  
+    <span >Messagerie(ENIG)</span>
+    <a class="btn btn-outline-info color"  role="button" (click)="selectedMenuItem = 's'">Link</a>
+    <span class="example-spacer"></span>
+    <span>Ali Ben Salah(Déconnexion)</span>
+  </mat-toolbar>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-3">
+
+  <div class="sidebar">
+    <mat-list>
+      
+      <mat-list-item (click)="selectedMenuItem = 'r'"><h2 class="text2"><mat-icon class="mat-icon-24">dashboard</mat-icon>Messages récus</h2></mat-list-item>
+      
+      <mat-list-item (click)="selectedMenuItem = 'e'"><h2   class="text2"><mat-icon class="mat-icon-24">storefront</mat-icon>Messages envoyer</h2></mat-list-item>
+      
+     </mat-list>
+  </div>
+
+      </div>
+
+      <div class="col">
+        <div *ngIf="selectedMenuItem === 'r'">
+            <div class="alert alert-info" role="alert">
+                Liste des Messages récus
+               </div>
+            <table class="table table-striped">
+            
+                <thead>
+                  <tr>
+                
+                    <th scope="col">De</th>
+                    <th scope="col">Sujet</th>
+                    <th scope="col">Message</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+             
+                    <td>Ali ben salah</td>
+                    <td>Salut</td>
+                    <td>Bonjour cher ami</td>
+                    <td><button class="btn btn-danger">Supprimer</button></td>
+                  </tr>
+                  <tr>
+               
+                    <td>Ali ben salah</td>
+                    <td>Test3</td>
+                    <td>test message4</td>
+                    <td><button class="btn btn-danger">Supprimer</button></td>
+                  </tr>
+                  <tr>
+                 
+                    <td>Ali ben salah</td>
+                    <td>test4</td>
+                    <td>Test Messsage66</td>
+                    <td><button class="btn btn-danger">Supprimer</button></td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+            
+        </div>
+         <app-message-r *ngIf="selectedMenuItem === 'e'"></app-message-r>
+
+         <app-send *ngIf="selectedMenuItem === 's'"></app-send>
+
+        </div>
+      
+
+      </div>
+     
+      </div>

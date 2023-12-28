@@ -1,0 +1,66 @@
+<div class="login">
+  <div class="col-md-12">
+    <div class="card card-container">
+      <img
+        id="profile-img"
+        src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+        class="profile-img-card"
+      />
+      <h2>Connexion</h2>
+     
+      <!--form-->
+      <form (ngSubmit) = "onSubmit()">
+        <div class="form-group">
+        </div>
+    
+        <div class="form-group">
+            <mat-form-field class="example2">
+                <mat-label>email</mat-label>
+
+                <input matInput placeholder="pat@example.com"  id = "email"
+                    name = "email"  required>
+              <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+            
+        </div>
+        
+           
+              
+            
+          
+
+        <div class="form-group">
+            <mat-form-field class="example2">
+                <mat-label>Enter your password</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'"  id = "password"
+                name = "password"   >
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
+            </mat-form-field>
+          
+        </div>
+        
+           
+         
+
+        
+     <div >
+      <button mat-button color="accent">Se connecter</button>
+        <!--<button class = "btn btn-danger css" type ="submit">Submit</button>-->
+     </div>
+     
+    </form>
+
+
+   
+      
+      
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<br>
+
+
